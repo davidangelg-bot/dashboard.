@@ -7,7 +7,15 @@
     <title>dashboard.</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" style="padding:20px;font-family:sans-serif">Iniciando twttr...</div>
+<script>
+window.addEventListener("error", function(e) {
+  document.body.innerHTML = "<pre style=\"padding:16px;color:red;white-space:pre-wrap\">ERROR: " + (e.message || (e.target && e.target.src) || "Error cargando script") + "</pre>";
+}, true);
+window.addEventListener("unhandledrejection", function(e) {
+  document.body.innerHTML = "<pre style=\"padding:16px;color:red;white-space:pre-wrap\">PROMISE: " + (e.reason && e.reason.message ? e.reason.message : e.reason) + "</pre>";
+});
+</script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
